@@ -1,0 +1,20 @@
+{
+  "name": "foo-bar",
+  "description": "Webcomponent foo-bar following open-wc recommendations",
+  "license": "MIT",
+  "author": "foo-bar",
+  "version": "0.0.0",
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "lit": "^2.0.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@web/dev-server": "^0.1.23"
+  },
+  "customElements": "custom-elements.json"
+}
