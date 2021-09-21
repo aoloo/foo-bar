@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import yup from "yup";
+import * as Yup from "yup";
 const logo = new URL("../assets/open-wc-logo.svg", import.meta.url).href;
 
 export class FooBar extends LitElement {
