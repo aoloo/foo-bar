@@ -2,6 +2,12 @@
 
 /** Use Hot Module replacement by adding --hmr to the start command */
 const hmr = process.argv.includes('--hmr');
+import { fromRollup } from '@web/dev-server-rollup';
+import rollupAlias from '@rollup/plugin-alias';
+import rollupCommonJS from '@rollup/plugin-commonjs';
+
+const alias = fromRollup(rollupAlias);
+const commonjs = fromRollup(rollupCommonJS);
 
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   open: '/',
@@ -20,6 +26,12 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   plugins: [
     /** Use Hot Module Replacement by uncommenting. Requires @open-wc/dev-server-hmr plugin */
     // hmr && hmrPlugin({ exclude: ['**/*/node_modules/**/*'], presets: [presets.litElement] }),
+    alias({
+      entries: [
+        { find: 'lodash', replacement: 'lodash-es' },
+      ]
+    }),
+    commonjs(),
   ],
 
   // See documentation for all available options

@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "foo-bar",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "web-dev-server"
@@ -14,7 +15,10 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
-    "@web/dev-server": "^0.1.23"
+    "@web/dev-server": "^0.1.23",
+    "@web/dev-server-rollup": "^0.3.9",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-alias": "^3.1.5"
   },
   "customElements": "custom-elements.json"
 }
